@@ -33,7 +33,7 @@ echo "check for initial git clone..."
 if [ ! -d "${OPENWBBASEDIR}/web" ]; then
 	mkdir "$OPENWBBASEDIR"
 	chown "$OPENWB_USER:$OPENWB_GROUP" "$OPENWBBASEDIR"
-	sudo -u "$OPENWB_USER" git clone https://github.com/openWB/core.git --branch master "$OPENWBBASEDIR"
+	sudo -u "$OPENWB_USER" git clone https://github.com/ChrisMuki/openwbcore.git --branch master "$OPENWBBASEDIR"
 	echo "git cloned"
 else
 	echo "ok"

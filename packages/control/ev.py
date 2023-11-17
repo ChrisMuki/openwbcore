@@ -432,7 +432,10 @@ class Ev:
             new_current = self.ev_template.data.min_current
         else:
             direction_str = f"Umschaltverzögerung von {max_phases} auf 1"
-            delay = (16 - pv_config.phase_switch_delay) * 60
+            # CN Adaptation done here!!!
+            # OLD: delay = (16 - pv_config.phase_switch_delay) * 60
+            # New: delay = pv_config.phase_switch_delay * 60
+            delay = pv_config.phase_switch_delay * 60
             required_power = (self.ev_template.data.min_current * max_phases * 230 -
                               self.ev_template.data.max_current_single_phase * 230)
             new_phase = 1
